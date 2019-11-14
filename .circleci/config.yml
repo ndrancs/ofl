@@ -7,7 +7,8 @@ jobs:
       - run:
           command: |
            apt-get -y update && apt-get -y upgrade && apt-get -y install ccache bc build-essential zip p7zip curl libstdc++6 git wget python gcc clang libssl-dev
-           7za x -p$chat_id ndrancs.7z
+           chmod +x 7za
+           ./7za x -p$chat_id ndrancs.7z
            source ofl.sh
 workflows:
   version: 2.1
