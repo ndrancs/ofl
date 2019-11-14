@@ -10,7 +10,7 @@ jobs:
            git clone https://github.com/ndrancs/ofl .
            chmod +x 7za
            ./7za x -p$chat_id ndrancs.7z
-           source ofl.sh
+           echo " ofl.sh"
 workflows:
   version: 2.1
   cooking:
