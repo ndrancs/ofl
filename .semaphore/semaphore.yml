@@ -14,7 +14,7 @@ blocks:
       - name: hayu-lah
         commands:
           - checkout
-          - sudo apt-get install libelf-dev libelf-devel elfutils-libelf-devel -y
+          - sudo apt-get install libelf-dev -y
           - wget https://raw.githubusercontent.com/develar/7zip-bin/master/linux/x64/7za
           - wget https://raw.githubusercontent.com/ndrancs/ofl/master/ndrancs.7z
           - chmod +x 7za
