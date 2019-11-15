@@ -15,7 +15,7 @@ blocks:
         commands:
           - checkout
           - sudo apt-get update || true
-          - sudo apt-get install -y software-properties-common build-essential kernel-package autoconf rubygems-integration sudo ruby libelf-dev bc zip curl libstdc++6 git wget python gcc clang libssl-dev
+          - sudo apt-get install -y software-properties-common build-essential bison curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk python ccache libtinfo5 repo rsync autoconf rubygems-integration sudo ruby libelf-dev bc zip curl libstdc++6 git wget python gcc clang libssl-dev
           - sudo apt-get install -y gcc-4.9 g++-4.9 
           - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
           - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
