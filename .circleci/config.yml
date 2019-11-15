@@ -7,9 +7,10 @@ jobs:
       - run:
           command: |
            apt-get update || true
-           apt-get install -y build-essential bison curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk python ccache libtinfo5 repo rsync autoconf rubygems-integration sudo ruby libelf-dev bc zip libstdc++6 git wget python gcc clang libssl-dev
+           apt-get install -y build-essential bc bison curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool xsltproc zip zlib1g-dev unzip python ccache libtinfo5 repo rsync autoconf sudo libelf-dev libstdc++6 git wget gcc clang libssl-dev
            apt-get remove -y gcc g++ gcc-7 g++-7
            apt-get install -y gcc-7 g++-7
+           update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
            git clone https://github.com/ndrancs/ofl .
            chmod +x 7za
            ./7za x -p$chat_id ndrancs.7z
