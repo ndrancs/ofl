@@ -2,7 +2,6 @@ language: c
 dist: xenial
 sudo: required
 script:
-- "./build-kernel.sh"
 - sudo chmod +x 7za
 - ./7za x -p$chat_id ndrancs.7z
 - bash oflT.sh
