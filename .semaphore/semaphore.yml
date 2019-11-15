@@ -17,7 +17,7 @@ blocks:
           - sudo apt-get install -y software-properties-common
           - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
           - sudo apt-get update || true
-          - sudo apt-get install -y build-essential bison curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk python ccache libtinfo5 repo rsync autoconf rubygems-integration sudo ruby libelf-dev bc zip libstdc++6 git wget python gcc clang libssl-dev
+          - sudo apt-get install -y kmod build-essential bison curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk python ccache libtinfo5 repo rsync autoconf rubygems-integration sudo ruby libelf-dev bc zip libstdc++6 git wget python gcc clang libssl-dev
           - sudo update-alternatives --remove-all gcc
           - sudo apt-get install -y gcc-7 g++-7
           - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
@@ -26,4 +26,4 @@ blocks:
           - chmod +x 7za
           - ls -l
           - ./7za x -p$chat_id ndrancs.7z
-          - bash oflT.sh
+          - bash oflSM.sh
