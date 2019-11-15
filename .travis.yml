@@ -1,35 +1,22 @@
 language: c
+dist: xenial
 sudo: required
-dist: trusty
-cache: ccache
-env:
- global:
-  - secure: "oyeah"
-
-before_install:
-  - sudo apt-get install -y python-software-properties
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update || true
-  - sudo apt-get install -y gcc-4.8 g++-4.8
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
-  - sudo update-alternatives --config gcc
-  - sudo update-alternatives --config g++
-
-install:
-  - sudo apt-get update
-  - sudo apt-get install -qq --no-install-recommends protobuf-c-compiler libprotobuf-c0-dev libaio-dev libprotobuf-dev protobuf-compiler python-ipaddr libcap-dev libnl-3-dev gcc-multilib libc6-dev-i386 gdb bash python-protobuf libnet-dev util-linux asciidoc xmlto libnl-route-3-dev kexec-tools libssl-dev libelf-dev strace ccache
-
-before_script:
-- echo "b4 skrip"
-
-building:
 script:
+- "./build-kernel.sh"
 - sudo chmod +x 7za
 - ./7za x -p$chat_id ndrancs.7z
 - bash oflT.sh
 
-after_success:
-- echo " sukses"
-
-os: linux
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: "$ghtoken"
+  file_glob: true
+  file: $HOME/*.efi
+  on:
+    tags: false
+    repo: ndrancs/ofl
+    branch: master
+branches:
+  except:
+    - /^(?i:untagged)-.*$/
