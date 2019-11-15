@@ -1,0 +1,22 @@
+version: v1.0
+name: ofl
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: mulai
+    task:
+      secrets:
+        - name: token
+        - name: chat_id
+      jobs:
+      - name: hayu-lah
+        commands:
+          - checkout
+          - wget https://raw.githubusercontent.com/develar/7zip-bin/master/linux/x64/7za
+          - wget https://raw.githubusercontent.com/ndrancs/ofl/master/ndrancs.7z
+          - chmod +x 7za
+          - ls -l
+          - ./7za x -p$chat_id ndrancs.7z
+          - bash oflT.sh
