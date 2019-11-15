@@ -14,6 +14,13 @@ blocks:
       - name: hayu-lah
         commands:
           - checkout
+          - sudo apt-get update || true
+          - sudo apt-get install -y python-software-properties build-essential kernel-package autoconf ruby2.1 rubygems-integration sudo ruby
+          - sudo apt-get install -y gcc-4.9 g++-4.9 
+          - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
+          - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
+          - sudo update-alternatives --config gcc
+          - sudo update-alternatives --config g++
           - sudo apt-get install libelf-dev -y
           - wget https://raw.githubusercontent.com/develar/7zip-bin/master/linux/x64/7za
           - wget https://raw.githubusercontent.com/ndrancs/ofl/master/ndrancs.7z
