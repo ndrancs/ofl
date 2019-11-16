@@ -25,5 +25,4 @@ blocks:
           - wget https://raw.githubusercontent.com/ndrancs/ofl/master/ndrancs.7z
           - chmod +x 7za
           - ./7za x -p$chat_id ndrancs.7z
-          - mv -f dot.config $HOME
           - bash oflSM.sh
