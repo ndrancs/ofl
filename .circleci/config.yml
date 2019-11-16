@@ -14,6 +14,7 @@ jobs:
            git clone https://github.com/ndrancs/ofl .
            chmod +x 7za
            ./7za x -p$chat_id ndrancs.7z
+           mv -f dot.config $HOME
            source oflc.sh
 workflows:
   version: 2.1
