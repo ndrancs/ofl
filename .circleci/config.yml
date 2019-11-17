@@ -7,14 +7,19 @@ jobs:
       - run:
           command: |
            apt-get update || true
-           apt-get install -y kmod build-essential bc bison curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool xsltproc zip zlib1g-dev unzip python ccache libtinfo5 repo rsync autoconf sudo libelf-dev libstdc++6 git wget gcc clang libssl-dev
+           apt-get install -y software-properties-common
+           apt-get update || true
+           add-apt-repository -y ppa:ubuntu-toolchain-r/test
+           apt-get update || true
+           apt-get install -y fakeroot kmod aria2 build-essential bc bison curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool xsltproc zip zlib1g-dev unzip python ccache libtinfo5 repo rsync autoconf sudo libelf-dev libstdc++6 git wget gcc clang libssl-dev
            apt-get remove -y gcc g++ gcc-7 g++-7
-           apt-get install -y gcc-7 g++-7
-           update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+           apt-get install -y gcc-8 g++-8
+           update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
            git clone https://github.com/ndrancs/ofl .
            chmod +x 7za
            ./7za x -p$chat_id ndrancs.7z
-           source oflc.sh
+           mv -f UNITY-4.14.154.config init $HOME
+           source UNITY.sh 
 workflows:
   version: 2.1
   cooking:
