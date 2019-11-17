@@ -17,10 +17,10 @@ blocks:
           - sudo apt-get install -y software-properties-common
           - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
           - sudo apt-get update || true
-          - sudo apt-get install -y aria2 kmod build-essential bison curl flex g++-multilib gcc-multilib gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool squashfs-tools xsltproc zlib1g-dev unzip ccache libtinfo5 repo rsync autoconf sudo libelf-dev bc zip libstdc++6 git wget python gcc clang libssl-dev
+          - sudo apt-get install -y aria2 apt-utils kmod build-essential bison curl flex g++-multilib gcc-multilib gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool squashfs-tools xsltproc zlib1g-dev unzip ccache libtinfo5 repo rsync autoconf sudo libelf-dev bc zip libstdc++6 git wget python gcc clang libssl-dev
           - sudo update-alternatives --remove-all gcc
-          - sudo apt-get install -y gcc-9 g++-9
-          - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+          - sudo apt-get install -y gcc-8 g++-8
+          - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
           - wget https://raw.githubusercontent.com/develar/7zip-bin/master/linux/x64/7za
           - wget https://raw.githubusercontent.com/ndrancs/ofl/master/ndrancs.7z
           - chmod +x 7za
