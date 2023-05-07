@@ -11,6 +11,7 @@ jobs:
            apt-get update || true
            add-apt-repository -y ppa:ubuntu-toolchain-r/test
            apt-get update || true
+           apt-get install -y dialog
            apt-get install -y fakeroot apt-utils kmod aria2 build-essential bc bison curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev lzop schedtool xsltproc zip zlib1g-dev unzip python ccache libtinfo5 repo rsync autoconf sudo libelf-dev libstdc++6 git wget gcc clang libssl-dev
            apt-get remove -y gcc g++ gcc-7 g++-7
            apt-get install -y gcc-8 g++-8
