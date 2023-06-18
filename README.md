@@ -7,6 +7,7 @@ Live linux distro combined in one ~20MB file. Runs on any UEFI computer (PC or M
 
 About in russian: https://habrahabr.ru/post/349758/
 ### Main advantages
+### For simple system rescue
 
 * **No installation required** — no need to create additional paritions. Just copy one file to EFI system partition and add new boot entry to NVRAM.
   
